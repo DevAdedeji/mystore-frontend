@@ -6,8 +6,3 @@
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
 }
-
-body.dark{
-    background:#1c1c1c;
-    color:#fff;
-}
