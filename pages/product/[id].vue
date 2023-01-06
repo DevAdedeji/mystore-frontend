@@ -1,5 +1,8 @@
 <template>
-  <div class="w-[90%] mx-auto">
+  <div v-if="index.loadingAProduct" class="min-h-[80vh] flex items-center justify-center">
+    <Loader />
+  </div>
+  <div class="w-[90%] mx-auto" v-else>
     <div class="py-4 flex items-center gap-2 text-[14px] capitalize">
       <a href="/">Home</a>
       <p>></p>
