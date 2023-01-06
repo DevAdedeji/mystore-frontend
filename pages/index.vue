@@ -1,8 +1,66 @@
 <template>
-    <div class="flex flex-col justify-center items-center">
-        <h1>myStore</h1>
-    </div>
+  <div class="pb-10">
+    <section class="w-[90%] mx-auto bg-white mt-10 pb-5">
+      <p class="text-[20px] font-bold p-4">Top Selling Items</p>
+      <div class="grid grid-cols-5">
+        <div v-for="product in index.products.slice(0, 5)" :key="product._id">
+          <NuxtLink :to="{ name: 'product-id', params: { id: product.slug } }">
+            <ProductCard :product="product" />
+          </NuxtLink>
+        </div>
+      </div>
+    </section>
+    <section class="w-[90%] mx-auto bg-white mt-10 pb-5">
+      <p class="text-[20px] font-bold bg-primary-color px-5 py-2 text-white">
+        Women's Clothing
+      </p>
+      <div class="grid grid-cols-5 pt-4">
+        <div v-for="product in index.womens.slice(0, 5)" :key="product._id">
+          <NuxtLink :to="{ name: 'product-id', params: { id: product.slug } }">
+            <ProductCard :product="product" />
+          </NuxtLink>
+        </div>
+      </div>
+    </section>
+    <section class="w-[90%] mx-auto bg-white mt-10 pb-5">
+      <p class="text-[20px] font-bold bg-primary-color px-5 py-2 text-white">
+        Men's Clothing
+      </p>
+      <div class="grid grid-cols-5 pt-4">
+        <div v-for="product in index.mens.slice(0, 5)" :key="product._id">
+          <NuxtLink :to="{ name: 'product-id', params: { id: product.slug } }">
+            <ProductCard :product="product" />
+          </NuxtLink>
+        </div>
+      </div>
+    </section>
+    <section class="w-[90%] mx-auto bg-white mt-10 pb-5">
+      <p class="text-[20px] font-bold bg-primary-color px-5 py-2 text-white">Jewelery</p>
+      <div class="grid grid-cols-5 pt-4 items-center justify-center">
+        <div v-for="product in index.jewelery.slice(0, 5)" :key="product._id">
+          <NuxtLink :to="{ name: 'product-id', params: { id: product.slug } }">
+            <ProductCard :product="product" />
+          </NuxtLink>
+        </div>
+      </div>
+    </section>
+    <section class="w-[90%] mx-auto bg-white mt-10 pb-5">
+      <p class="text-[20px] font-bold bg-primary-color px-5 py-2 text-white">
+        Electronics
+      </p>
+      <div class="grid grid-cols-5 pt-4 place-content-center">
+        <div v-for="product in index.electronics.slice(0, 5)" :key="product._id">
+          <NuxtLink :to="{ name: 'product-id', params: { id: product.slug } }">
+            <ProductCard :product="product" />
+          </NuxtLink>
+        </div>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script setup>
+import { useIndexStore } from "~~/store/useIndexStore";
+const index = useIndexStore();
+index.getProducts();
 </script>

@@ -1,13 +1,7 @@
 <template>
-    <footer class=" flex justify-center items-center">
-        The Footer
-    </footer>
+  <footer class="flex items-center justify-center"></footer>
 </template>
 
 <script setup>
-
+const year = new Date().getFullYear();
 </script>
-
-<style lang="postcss" scoped>
-
-</style>
