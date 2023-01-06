@@ -9,7 +9,9 @@
     <p class="text-[15px] text-center px-2">
       {{ product.title.length > 20 ? product.title.slice(0, 21) + "..." : product.title }}
     </p>
-    <p class="text-md md:text-xl font-semibold px-2">₦{{ product.price }}</p>
+    <p class="text-md md:text-xl font-semibold px-2">
+      ₦{{ product.price.toLocaleString() }}
+    </p>
   </div>
 </template>
 

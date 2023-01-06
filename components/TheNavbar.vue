@@ -1,7 +1,7 @@
 <template>
   <div class="bg-white w-full">
     <nav class="h-[70px] md:h-[10vh] px-5 flex items-center !justify-between">
-      <div class="mr-auto w-[50%] md:w-[15%]">
+      <div class="w-[50%] md:w-[15%]">
         <a href="/">
           <img src="../assets/images/logo.png" class="w-full" alt="" />
         </a>

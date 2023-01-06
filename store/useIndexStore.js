@@ -5,8 +5,10 @@ export const useIndexStore = defineStore('index',{
   state: () => ({
     loading:true,
     loadingAProduct:true,
+    loadingCategoryProducts:true,
     product:null,
     products:[],
+    categoryProducts:[],
     mens:[],
     womens:[],
     jewelery:[],
@@ -36,13 +38,13 @@ export const useIndexStore = defineStore('index',{
     },
     sortProducts(){
       this.products.forEach(product=>{
-        if(product.categories.includes("men's clothing")){
+        if(product.category==="men's clothing"){
           this.mens.push(product)
-        }else if(product.categories.includes("women's clothing")){
+        }else if(product.category === "women's clothing"){
           this.womens.push(product)
-        }else if(product.categories.includes("jewelery")){
+        }else if(product.category ==="jewelery"){
           this.jewelery.push(product)
-        }else if(product.categories.includes("electronics")){
+        }else if(product.category  ==="electronics"){
           this.electronics.push(product)
         }else{
           this.others.push(product)
@@ -56,6 +58,26 @@ export const useIndexStore = defineStore('index',{
         if(result.status=200){
           this.loadingAProduct = false;     
           this.product = result.data.product;
+          this.getProductsByCateogries(this.product.category);
+        }else{
+
+        }
+      })
+      .catch(err=>{
+        console.log(err);
+      })
+    },
+    getProductsByCateogries(category){
+      getData(`/products/?limit=20&category=${category}`)
+      .then(result=>{
+        if(result.status=200){
+          this.loadingCategoryProducts = false;
+          let products = result.data.products;
+          products.forEach(product=>{
+            if(product._id !== this.product._id){
+              this.categoryProducts.push(product);
+            }
+          })
         }else{
 
         }
