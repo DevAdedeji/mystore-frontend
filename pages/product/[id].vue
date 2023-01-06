@@ -3,7 +3,7 @@
     <Loader />
   </div>
   <div class="w-[90%] mx-auto" v-else>
-    <div class="py-4 flex items-center gap-2 text-[14px] capitalize">
+    <div class="py-4 flex items-center gap-2 text-[14px] capitalize opacity-50">
       <a href="/">Home</a>
       <p>></p>
       <p v-if="index.product">{{ index.product.categories[0] }}</p>
