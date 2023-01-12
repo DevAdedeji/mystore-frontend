@@ -14,5 +14,6 @@ export default defineNuxtConfig({
     ],
     css:[
         '@/assets/css/tailwind.css'
-    ]
+    ],
+    plugins:['@/plugins/vue-toastification']
 })

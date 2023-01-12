@@ -70,6 +70,9 @@
 
 <script setup>
 import { useIndexStore } from "~~/stores/products";
+import { useToast } from "vue-toastification";
+const toast = useToast();
 const index = useIndexStore();
 index.getProducts();
+toast.success("Welcome to myStore", { timeout: 3000 });
 </script>
