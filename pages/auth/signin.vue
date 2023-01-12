@@ -8,4 +8,8 @@
 definePageMeta({
   layout: "auth",
 });
+useHead({
+  title: "Sign In | MyStore",
+  link: [{ rel: "icon", type: "image/png", href: "favicon.ico" }],
+});
 </script>
