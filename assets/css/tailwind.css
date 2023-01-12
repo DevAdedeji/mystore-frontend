@@ -9,3 +9,16 @@
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
 }
+body::-webkit-scrollbar, .products_container::-webkit-scrollbar {
+    width: 4px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track, .products_container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+body::-webkit-scrollbar-thumb, .products_container::-webkit-scrollbar-thumb {
+    background-color: #1B92F4;
+    border-radius: 20px;
+
+}

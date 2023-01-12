@@ -3,6 +3,7 @@ import {getData} from '../services/Get/getData'
 
 export const useIndexStore = defineStore('index',{
   state: () => ({
+    isLoggedIn:false,
     loading:true,
     loadingAProduct:true,
     loadingCategoryProducts:true,
@@ -35,6 +36,14 @@ export const useIndexStore = defineStore('index',{
       .catch(err=>{
         console.log(err);
       })
+    },
+    isUserLoggedIn(){
+      const token = localStorage.getItem("USER_AUTH_TOKEN");
+      if(token){
+        this.isLoggedIn = true;
+      }else{
+        this.isLoggedIn = false;
+      }
     },
     sortProducts(){
       this.products.forEach(product=>{

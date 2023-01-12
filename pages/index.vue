@@ -10,7 +10,7 @@
         Top Selling Items
       </p>
       <div
-        class="flex items-center sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-0 pt-4 sm:overflow-auto overflow-x-scroll"
+        class="flex items-center sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-0 pt-4 sm:overflow-auto overflow-x-scroll products_container"
       >
         <div v-for="product in index.products.slice(0, 5)" :key="product._id">
           <NuxtLink :to="{ name: 'product-id', params: { id: product.slug } }">
@@ -40,7 +40,7 @@
         </div>
       </div>
       <div
-        class="flex items-center sm:overflow-auto overflow-x-scroll sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-0 pt-4"
+        class="flex items-center sm:overflow-auto overflow-x-scroll sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-0 pt-4 products_container"
       >
         <div v-for="product in index.womens.slice(0, 10)" :key="product._id">
           <NuxtLink :to="{ name: 'product-id', params: { id: product.slug } }">
@@ -70,7 +70,7 @@
         </div>
       </div>
       <div
-        class="flex items-center sm:overflow-auto overflow-x-scroll sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-0 pt-4"
+        class="flex items-center sm:overflow-auto overflow-x-scroll sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-0 pt-4 products_container"
       >
         <div v-for="product in index.mens.slice(0, 10)" :key="product._id">
           <NuxtLink :to="{ name: 'product-id', params: { id: product.slug } }">
@@ -100,7 +100,7 @@
         </div>
       </div>
       <div
-        class="flex items-center sm:overflow-auto overflow-x-scroll sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-0 pt-4 justify-center"
+        class="flex items-center sm:overflow-auto overflow-x-scroll sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-0 pt-4 justify-center products_container"
       >
         <div v-for="product in index.jewelery.slice(0, 10)" :key="product._id">
           <NuxtLink :to="{ name: 'product-id', params: { id: product.slug } }">
@@ -130,7 +130,7 @@
         </div>
       </div>
       <div
-        class="flex items-center sm:overflow-auto overflow-x-scroll sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-0 pt-4"
+        class="flex items-center sm:overflow-auto overflow-x-scroll sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-0 pt-4 products_container"
       >
         <div v-for="product in index.electronics.slice(0, 10)" :key="product._id">
           <NuxtLink :to="{ name: 'product-id', params: { id: product.slug } }">
@@ -143,7 +143,7 @@
 </template>
 
 <script setup>
-import { useIndexStore } from "~~/stores/products";
+import { useIndexStore } from "~~/stores";
 import { useToast } from "vue-toastification";
 const toast = useToast();
 const index = useIndexStore();
