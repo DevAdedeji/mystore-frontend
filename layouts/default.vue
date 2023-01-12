@@ -1,9 +1,7 @@
 <template>
   <div class="bg-grey min-h-screen">
     <the-navbar />
-
     <slot />
-
     <the-footer />
   </div>
 </template>
