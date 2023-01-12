@@ -65,7 +65,7 @@
 </template>
 
 <script setup>
-import { useIndexStore } from "~~/store/useIndexStore";
+import { useIndexStore } from "~~/stores/products";
 const index = useIndexStore();
 const route = useRoute();
 const slug = route.params.id;

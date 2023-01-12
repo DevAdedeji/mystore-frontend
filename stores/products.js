@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import {getData} from '../Services/Get/getData'
+import {getData} from '../services/Get/getData'
 
 export const useIndexStore = defineStore('index',{
   state: () => ({
@@ -17,7 +17,7 @@ export const useIndexStore = defineStore('index',{
   }),
 
   getters: {
-    
+
   },
 
   actions: {
@@ -50,13 +50,13 @@ export const useIndexStore = defineStore('index',{
           this.others.push(product)
         }
       })
-      
+
     },
     getAProduct(slug){
       getData(`/products/${slug}`)
       .then(result=>{
         if(result.status=200){
-          this.loadingAProduct = false;     
+          this.loadingAProduct = false;
           this.product = result.data.product;
           this.getProductsByCateogries(this.product.category);
         }else{

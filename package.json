@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@pinia/nuxt": "0.4.3",
-    "axios": "^1.2.2"
+    "axios": "^1.2.2",
+    "vue-toastification": "^2.0.0-rc.5"
   }
 }

@@ -69,7 +69,7 @@
 </template>
 
 <script setup>
-import { useIndexStore } from "~~/store/useIndexStore";
+import { useIndexStore } from "~~/stores/products";
 const index = useIndexStore();
 index.getProducts();
 </script>
