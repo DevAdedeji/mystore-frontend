@@ -3,10 +3,10 @@
     <img
       :src="product.image"
       alt=""
-      class="object-contain h-[15vh] md:h-[20vh] w-[90%] mx-auto"
+      class="object-contain h-[15vh] w-full md:h-[20vh] sm:w-[90%] mx-auto"
       loading="lazy"
     />
-    <p class="text-[15px] text-center px-2">
+    <p class="text-[15px] text-center px-2 whitespace-nowrap">
       {{ product.title.length > 20 ? product.title.slice(0, 21) + "..." : product.title }}
     </p>
     <p class="text-md md:text-xl font-semibold px-2">

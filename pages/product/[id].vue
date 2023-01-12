@@ -2,15 +2,15 @@
   <div v-if="index.loadingAProduct" class="min-h-[80vh] flex items-center justify-center">
     <Loader />
   </div>
-  <div class="w-[90%] mx-auto pb-10" v-else>
-    <div class="py-4 flex items-center gap-2 text-[14px] capitalize">
+  <div class="w-full sm:w-[90%] sm:mx-auto pb-10" v-else>
+    <div class="py-4 w-[90%] mx-auto flex items-center gap-2 text-[14px] capitalize">
       <a href="/" class="opacity-90">Home</a>
       <p>></p>
-      <p v-if="index.product" class="opacity-70">{{ index.product.category }}</p>
-      <p>></p>
-      <p class="opacity-50">{{ index.product.title }}</p>
+      <p v-if="index.product" class="opacity-70 whitespace-nowrap">
+        {{ index.product.category }}
+      </p>
     </div>
-    <section class="py-5 bg-white w-full lg:w-[70%]">
+    <section class="py-5 bg-white w-full px-3 sm:px-0 lg:w-[70%]">
       <div class="flex flex-col sm:flex-row gap-3 p-5">
         <div>
           <img
@@ -44,16 +44,20 @@
               <circle cx="10.5" cy="19.5" r="1.5"></circle>
               <circle cx="16.5" cy="19.5" r="1.5"></circle>
             </svg>
-            <p class="text-xl">Add to cart</p>
+            <p class="text-[17px] sm:text-xl">Add to cart</p>
           </button>
         </div>
       </div>
     </section>
     <section class="bg-white mt-10 w-full lg:w-[70%]">
-      <p class="text-[20px] font-bold bg-primary-color px-5 py-2 text-white capitalize">
+      <p
+        class="text-[17px] sm:text-[20px] font-bold bg-primary-color px-5 py-2 text-white capitalize"
+      >
         More from this category
       </p>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-0 pt-4">
+      <div
+        class="flex items-center overflow-x-scroll sm:overflow-auto sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-0 pt-4"
+      >
         <div v-for="product in index.categoryProducts" :key="product._id">
           <NuxtLink :to="{ name: 'product-id', params: { id: product.slug } }">
             <ProductCard :product="product" />
