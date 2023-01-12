@@ -1,6 +1,6 @@
 <template>
   <div class="w-full">
-    <p class="text-center text-4xl font-bold py-10">Sign In</p>
+    <p class="text-center text-4xl font-bold py-6 md:py-10">Sign In</p>
     <form class="w-[90%] sm:w-[70&] lg:w-[30%] mx-auto flex flex-col gap-10">
       <div class="flex flex-col gap-1">
         <label for="email">Email Address</label>
